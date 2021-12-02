@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %}
+    Create an Entry - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+
+<section class="content">
+
+
+  <article class="post">
+   <div class="container">
+
+
+     <div class="columns">
+       <div class="item">
+
+         <h4 class="item-title">Create an entry </h4>
+         <form role="form" action="" method="post">
+           {% csrf_token %}
+           {{ form.as_p }}
+           <input type="submit" name = "newentry" value="Submit" />
+         </form>
+       </div>
+
+when click calculate, then calculate wordcount
+
+  </div>
+  </div>
+  </article>
+  </section>
+
+  <!-- I might not need this first div class. This is an input field that should go on the first page -->
+<!-- <div class="container">
+      <div class="row">
+          <div class="col col-md-6">
+              <input type="submit" name="submit" class="btn btn-primary btn-lg btn-block">
+          </div>
+          <div class="col col-md-6">
+              <input type="reset" class="btn btn-danger btn-lg btn-block">
+          </div>
+      </div> -->
+
+      <!-- <div class="row" style="margin-top: 30px;">
+          <div class="col-md-12">
+              <h1>This sentence is:
+
+                  {% if class %}
+                      {% if class == 'pos' %}
+                          <span style="color: green;">
+                              {{ class }}
+                          </span>
+                      {% else %}
+                          <span style="color: red;">
+                              {{ class }}
+                          </span>
+                      {% endif %}
+
+
+
+                      <!--with confidence {{ confidence }}%
+                  {% endif %}
+
+              </h1>
+          </div>
+      </div>
+  </div> -->
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+    Edit {{ entry.name }} - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+<section class="content">
+  <!--<div class="full-bleed cool-photo"></div>-->
+
+  <article class="post">
+   <div class="container">
+
+
+     <div class="columns">
+       <div class="item">
+
+         <h4 class="item-title">Edit "{{ entry.title }}"</h4>
+         <form role="form" action="" method="post">
+           {% csrf_token %}
+           {{ form.as_p }}
+           <button type="submit">Submit</button>
+         </form>
+       </div>
+
+
+  </div>
+  </div>
+  </article>
+  </section>
+{% endblock content %}

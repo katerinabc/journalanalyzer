@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %}
+    Homepage - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+<section class="content">
+  <!--<div class="full-bleed cool-photo"></div>-->
+
+  <article class="post">
+   <div class="container">
+     <h2>Journal Analyzer App</h2>
+
+    {% for entry in entrys %}
+
+    <div class="columns">
+      <div class="item">
+    <h4 class="item-title">
+      <a href="{% url 'entry_detail' slug=entry.slug %}">
+          {{ entry.title }}
+        </h4>
+    <p>  {{ entry.description }} </p>
+    <p>  {{ entry.wcount }} </p>
+
+   </div>
+  {% endfor %}
+
+
+<!--  <form role="form" action="" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Submit</button>
+  </form> -->
+
+
+
+{% endblock content %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %}
+    {{ entry.name }} - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+<section class="content">
+  <!--<div class="full-bleed cool-photo"></div>-->
+
+  <article class="post">
+   <div class="container">
+
+
+     <div class="columns">
+       <div class="item">
+         <h4 class="item-title">  {{ entry.title }} </h4>
+         <p>  {{ entry.description }} </p>
+         <p>  Word count: {{ entry.wcount }} </p>
+         <p>  How positive is your text: {{ entry.sentiment }} % </p>
+         <a href="{% url 'edit_entry' slug=entry.slug %}">Edit me</a>
+         <!-- calculate word count -->
+       </div>
+     </div>
+
+   </div>
+   </article>
+   </section>
+
+   <!-- <form action="" method="POST" class="search-form">
+       {% csrf_token %}
+       <div class="search-form">
+           <input type="text" name="comment" id="comment" class="form-control form-control-lg">
+       </div>
+
+       <div class="search-form">
+
+       </div>
+
+       </form>  -->
+
+
+
+
+{% endblock content %}

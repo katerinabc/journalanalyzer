@@ -1,0 +1,34 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+    <title>
+         {% block title %}My Hello Web App Project{% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% block header %}{% endblock header %}
+</head>
+<body>
+    <header class="header">
+      <div class="container">
+        <h1 class="site-title">Journal Analyzer</h1>
+        <span class="site-tagline"> Reveal your Unconscious</span>
+      </div>
+    </header>
+
+    <nav class="main-nav">
+      <div class="container">
+        <ul>
+        <!--  <li class="mobile-button"></a href='#'>Menu</a></li> --> <!-- no idea what this line does -->
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'create_entry' %}">Create entry</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    {% block content %}{% endblock content %}
+    {% block footer %}{% endblock footer %}
+</body>
+</html>
