@@ -5,34 +5,50 @@
 {% endblock title %}
 
 {% block content %}
+
 <section class="content">
-  <!--<div class="full-bleed cool-photo"></div>-->
+
 
   <article class="post">
    <div class="container">
-     <h2>Journal Analyzer App</h2>
+     <div class="columns">
 
-    {% for entry in entrys %}
-
-    <div class="columns">
-      <div class="item">
-    <h4 class="item-title">
-      <a href="{% url 'entry_detail' slug=entry.slug %}">
-          {{ entry.title }}
-        </h4>
-    <p>  {{ entry.description }} </p>
-    <p>  {{ entry.wcount }} </p>
-
-   </div>
-  {% endfor %}
+       <div class="item">
+         <h4 class="item-title">Create an entry </h4>
+         <form role="form" id= "newentry" name = "newentry" action="" method="post">
+           <!-- <label for="journal-entry"> Paste your journal entry </label>  done automatically -->
+           <!-- <input id="journal-entry" type="text" name="journal-entry"> -->
+           {% csrf_token %}
+           {{ form.as_p }}
+           <input type="submit" name = "submit" value="let's go" />
+           <!-- <input type="reset" class="btn btn-danger btn-lg btn-block" not sure how to get this to work. it doesn't seem to be linked. -->
+         </form>
+       </div>
 
 
-<!--  <form role="form" action="" method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Submit</button>
-  </form> -->
+       <div class = "item">
+         <h4 class="item-title"> Your Emotional Score </h4>
 
+         {% if sentiment %}
+            {% if sentiment > 0 %}
+            <span style = "color: green;">
+         <p> Your emotional score is: {{ sentiment }} </p>
+         <p> Your wrote {{ wcount }} words. </p>
+         </span>
 
+            {% else %}
+              <span style="color:red;">
+                <p> Your emotional score is: {{ sentiment }}. </p>
+                <p> Your wrote {{ wcount }} words. </p>
+              </span>
+
+            {% endif %}
+
+            {% endif %}
+     </div>
+  </div>
+  </div>
+  </article>
+  </section>
 
 {% endblock content %}

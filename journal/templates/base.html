@@ -6,6 +6,7 @@
          {% block title %}My Hello Web App Project{% endblock title %}
     </title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script src="{% static 'js/actions.js' %}"></script>
     {% block header %}{% endblock header %}
 </head>
 <body>
@@ -22,7 +23,6 @@
         <!--  <li class="mobile-button"></a href='#'>Menu</a></li> --> <!-- no idea what this line does -->
           <li><a href="{% url 'home' %}">Home</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'create_entry' %}">Create entry</a></li>
         </ul>
       </div>
     </nav>

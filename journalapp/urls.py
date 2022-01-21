@@ -29,14 +29,14 @@ urlpatterns = [
         TemplateView.as_view(template_name='about.html'),
         name = 'about'),
 
-    path('entrys/<slug>/', views.entry_detail,
-        name = 'entry_detail'),
-
-    path('entrys/<slug>/edit', views.edit_entry,
-        name = 'edit_entry'),
-
-    path('entrys/create', views.create_entry,
-        name = 'create_entry'),
+    # path('entrys/<slug>/', views.entry_detail,
+    #     name = 'entry_detail'),
+    #
+    # path('entrys/<slug>/edit', views.edit_entry,
+    #     name = 'edit_entry'),
+    #
+    # path('entrys/create', views.create_entry,
+    #     name = 'create_entry'),
 
     path('admin/', admin.site.urls)
 
